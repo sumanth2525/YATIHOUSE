@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YATI HOUSE Restaurant</title>
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    a { text-decoration: none; }
+
+    /* Site Container */
+    .site {
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      max-width: 1000px;
+      width: 90%;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .site header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .site .logo {
+      font-size: 3rem;
+      color: #333;
+      letter-spacing: 2px;
+    }
+
+    /* Navigation Cards */
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .nav-card {
+      background: rgba(255,255,255,0.85);
+      border-radius: 1.2rem;
+      padding: 1rem;
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+    .nav-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    .nav-image {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .nav-card:hover .nav-image {
+      transform: scale(1.1);
+    }
+    .nav-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Staggered Entrance */
+    .nav-card { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s forwards; }
+    .nav-card:nth-child(1) { animation-delay: 0.1s; }
+    .nav-card:nth-child(2) { animation-delay: 0.2s; }
+    .nav-card:nth-child(3) { animation-delay: 0.3s; }
+    .nav-card:nth-child(4) { animation-delay: 0.4s; }
+    .nav-card:nth-child(5) { animation-delay: 0.5s; }
+
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .site { padding: 1rem; }
+      .nav-image { width: 60px; height: 60px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header>
+      <h1 class="logo">YATI HOUSE</h1>
+    </header>
+    <div class="nav-grid">
+      <!-- Book Reservation -->
+      <a href="#reservation" class="nav-card">
+        <img src="assets/reservation.jpg" alt="Reservation" class="nav-image" />
+        <span class="nav-title">Book Reservation</span>
+      </a>
+      <!-- Menu -->
+      <a href="#menu" class="nav-card">
+        <img src="assets/menu.jpg" alt="Menu" class="nav-image" />
+        <span class="nav-title">Our Menu</span>
+      </a>
+      <!-- About Us -->
+      <a href="#about" class="nav-card">
+        <img src="assets/about.jpg" alt="About Us" class="nav-image" />
+        <span class="nav-title">About Us</span>
+      </a>
+      <!-- Contact -->
+      <a href="#contact" class="nav-card">
+        <img src="assets/contact.jpg" alt="Contact" class="nav-image" />
+        <span class="nav-title">Contact</span>
+      </a>
+      <!-- Location -->
+      <a href="#location" class="nav-card">
+        <img src="assets/location.jpg" alt="Location" class="nav-image" />
+        <span class="nav-title">Location</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
